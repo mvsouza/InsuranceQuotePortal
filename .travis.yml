@@ -1,0 +1,7 @@
+language: csharp
+mono: none
+dotnet: 2.0.2
+services:
+  - docker
+script:
+ - dotnet test ./test/UnitTest/InsuranceQuotePortal.Webapp.Test/InsuranceQuotePortal.Webapp.Test.csproj

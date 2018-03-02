@@ -1,0 +1,11 @@
+version: '3.3'
+
+services: 
+    
+  insurancequoteportal:
+    image: insurancequoteportal${TAG:-latest}
+    build:
+      context: ./src/InsuranceQuotePortal.Webapp/
+      dockerfile: Dockerfile
+  sql.data:
+    image: microsoft/mssql-server-linux:2017-latest
