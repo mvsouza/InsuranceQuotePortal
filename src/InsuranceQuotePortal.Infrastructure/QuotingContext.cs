@@ -11,7 +11,7 @@ namespace InsuranceQuotePortal.Infrastructure
         public const string DEFAULT_SCHEMA = "quote";
         public DbSet<Customer> Customer { get; set; }
 
-        private QuotingContext(DbContextOptions<QuotingContext> options) : base (options) { }
+        public QuotingContext(DbContextOptions<QuotingContext> options) : base (options) { }
 
 
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))

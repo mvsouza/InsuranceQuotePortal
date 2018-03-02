@@ -34,7 +34,7 @@ namespace InsuranceQuotePortal.Webapp.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch()
+            catch(Exception e)
             {
                 ModelState.AddModelError("Error", "It was not possible to create a new cutomer, please try later on. (Business Msg Due to Circuit-Breaker)");
             }
