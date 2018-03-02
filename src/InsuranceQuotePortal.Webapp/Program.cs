@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using InsuranceQuotePortal.Infrastructure;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace InsuranceQuotePortal.Webapp
 {
@@ -14,7 +16,8 @@ namespace InsuranceQuotePortal.Webapp
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            BuildWebHost(args)
+                .Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
@@ -22,4 +25,5 @@ namespace InsuranceQuotePortal.Webapp
                 .UseStartup<Startup>()
                 .Build();
     }
+
 }

@@ -1,0 +1,17 @@
+﻿@page
+@model InsuranceQuotePortal.Domain.Models.Customer
+<html>
+<body>
+    <p>
+        Enter your name.
+    </p>
+    <div asp-validation-summary="All"></div>
+    <form method="POST">
+        <div>Name: <input asp-for="Customer.Name" /></div>
+        <div>Phone: <input asp-for="Customer.Phone" /></div>
+        <div>E-mail: <input asp-for="Customer.Email" /></div>
+        <div>Address: <input asp-for="Customer.Address" /></div>
+        <input type="submit" />
+    </form>
+</body>
+</html>

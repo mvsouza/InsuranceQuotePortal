@@ -12,4 +12,15 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\InsuranceQuotePortal.Domain\InsuranceQuotePortal.Domain.csproj" />
+    <ProjectReference Include="..\InsuranceQuotePortal.Infrastructure\InsuranceQuotePortal.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Customer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Customer\Index.cshtml.cs" />
+  </ItemGroup>
 </Project>
