@@ -15,6 +15,6 @@ namespace InsuranceQuotePortal.Domain.Models
         public string Email { get; set; }
         public DateTime CreatedAt { get; set; }
         public string Address { get ; set; }
-        public ICollection<CustumerInsuranceProveded> InsuranceProvided { get; set; }
+        public IEnumerable<CustumerInsuranceProveded> InsuranceProvided { get; set; }
     }
 }

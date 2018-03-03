@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using InsuranceQuotePortal.Domain.Models;
 using InsuranceQuotePortal.Webapp.Application.Services;
 using InsuranceQuotePortal.Webapp.Models;
+using InsuranceQuotePortal.Webapp.Application.Models;
 
 namespace InsuranceQuotePortal.Webapp.Controllers
 {
@@ -23,10 +24,28 @@ namespace InsuranceQuotePortal.Webapp.Controllers
 
         public IActionResult New()
         {
+            ViewBag.InsuranceProvidedList = new []{
+                new {
+                    value = InsuranceType.Car,
+                    name = InsuranceType.Car.ToString()
+                },
+                new {
+                    value = InsuranceType.MotorCycle,
+                    name = InsuranceType.MotorCycle.ToString()
+                },
+                new {
+                    value = InsuranceType.Farm,
+                    name = InsuranceType.Farm.ToString()
+                },
+                new {
+                    value = InsuranceType.House,
+                    name = InsuranceType.House.ToString()
+                }
+            };
             return View();
         }
         [HttpPost]
-        public IActionResult New(Customer customer)
+        public IActionResult New(NewCustomerViewModel customer)
         {
             try
             {

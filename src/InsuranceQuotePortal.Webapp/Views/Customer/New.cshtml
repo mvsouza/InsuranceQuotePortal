@@ -13,11 +13,6 @@
         <form asp-action="New">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
@@ -33,13 +28,19 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Address" class="control-label"></label>
                 <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InsuranceProvided" class="control-label"></label>
+                <select id="InsuranceProvided" name="InsuranceProvided" multiple="multiple">
+
+        <option value="0">Motorcycle</option>
+        <option value="1">Car</option>
+        <option value="2">House</option>
+        <option value="3">Farm</option>
+                </select>
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
