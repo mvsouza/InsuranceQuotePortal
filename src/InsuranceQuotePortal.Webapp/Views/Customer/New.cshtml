@@ -34,12 +34,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="InsuranceProvided" class="control-label"></label>
-                <select id="InsuranceProvided" name="InsuranceProvided" multiple="multiple">
-
-        <option value="0">Motorcycle</option>
-        <option value="1">Car</option>
-        <option value="2">House</option>
-        <option value="3">Farm</option>
+                <select class="chosen-select" id="InsuranceProvided" name="InsuranceProvided" multiple="multiple">
+                    <option value="0">Motorcycle</option>
+                    <option value="1">Car</option>
+                    <option value="2">House</option>
+                    <option value="3">Farm</option>
                 </select>
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
@@ -56,4 +55,9 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(function(){
+            $(".chosen-select").chosen();
+        })
+    </script>
 }

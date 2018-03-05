@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InsuranceQuotePortal.Web.UI.Services
+namespace InsuranceQuotePortal.Webapp.Services
 {
     public interface IEmailSender
     {

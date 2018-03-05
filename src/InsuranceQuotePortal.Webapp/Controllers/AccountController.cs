@@ -1,9 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using InsuranceQuotePortal.Webapp.Services;
 using InsuranceQuotePortal.Webapp.Application.Services;
+using InsuranceQuotePortal.Webapp.Models;
+using InsuranceQuotePortal.Webapp.Models.AccountViewModels;
+using InsuranceQuotePortal.Webapp.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace InsuranceQuotePortal.Webapp.Controllers
 {
@@ -55,10 +64,6 @@ namespace InsuranceQuotePortal.Webapp.Controllers
                 {
                     _logger.LogInformation("User logged in.");
                     return RedirectToLocal(returnUrl);
-                }
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToAction(nameof(LoginWith2fa), new { returnUrl, model.RememberMe });
                 }
                 if (result.IsLockedOut)
                 {

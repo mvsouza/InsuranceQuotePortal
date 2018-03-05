@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InsuranceQuotePortal.Web.UI.Models.ManageViewModels
+namespace InsuranceQuotePortal.Webapp.Models.ManageViewModels
 {
     public class SetPasswordViewModel
     {

@@ -12,6 +12,10 @@ using InsuranceQuotePortal.Webapp.Application.Services;
 using InsuranceQuotePortal.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using Microsoft.AspNetCore.Identity;
+using InsuranceQuotePortal.Webapp.Models;
+using InsuranceQuotePortal.Webapp.Data;
+using InsuranceQuotePortal.Webapp.Services;
 
 namespace InsuranceQuotePortal.Webapp
 {
@@ -44,6 +48,16 @@ namespace InsuranceQuotePortal.Webapp
                     );
 
 
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration["ConnectionString"]));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            // Add application services.
+            services.AddTransient<IEmailSender, EmailSender>();
+
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<ICustomerService, CustomerService>();
 
@@ -62,16 +76,6 @@ namespace InsuranceQuotePortal.Webapp
             }
 
             app.UseStaticFiles();
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-
-            // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
-
             app.UseAuthentication();
             app.UseMvc(routes =>
             {

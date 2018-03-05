@@ -14,11 +14,10 @@ namespace InsuranceQuotePortal.Infrastructure
         public QuotingContext(DbContextOptions<QuotingContext> options) : base (options) { }
 
 
-        public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public void SaveEntities(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var result = await base.SaveChangesAsync();
-
-            return true;
+            base.SaveChanges();
+            
         }       
     }
 }

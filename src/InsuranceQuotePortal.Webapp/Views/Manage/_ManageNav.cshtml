@@ -1,4 +1,4 @@
-﻿@using InsuranceQuotePortal.Web.UI.Views.Manage
+﻿@using InsuranceQuotePortal.Webapp.Views.Manage
 @inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();

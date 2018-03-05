@@ -11,7 +11,7 @@ namespace InsuranceQuotePortal.Domain.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {
-        private readonly QuotingContext _context;
+        public readonly QuotingContext _context;
         public IUnitOfWork UnitOfWork
         {
             get
@@ -19,6 +19,7 @@ namespace InsuranceQuotePortal.Domain.Repositories
                 return _context;
             }
         }
+
         public CustomerRepository(QuotingContext context){
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }

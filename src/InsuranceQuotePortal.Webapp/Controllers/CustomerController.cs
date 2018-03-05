@@ -45,12 +45,16 @@ namespace InsuranceQuotePortal.Webapp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult New(NewCustomerViewModel customer)
+        public async Task<IActionResult> New(NewCustomerViewModel customer)
         {
             try
             {
-                _customerService.Add(customer);
 
+                Func<string,string,string> createUrl = (id, code) =>
+                {
+                    return Url.ResetPasswordCallbackLink(id, code, Request.Scheme);
+                };
+                await _customerService.AddAsync(customer, createUrl);
                 return RedirectToAction("Index");
             }
             catch(Exception e)
