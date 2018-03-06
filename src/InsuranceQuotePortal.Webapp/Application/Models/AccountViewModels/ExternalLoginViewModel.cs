@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InsuranceQuotePortal.Webapp.Models.AccountViewModels
+namespace InsuranceQuotePortal.Application.Models.AccountViewModels
 {
     public class ExternalLoginViewModel
     {

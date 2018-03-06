@@ -1,21 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using InsuranceQuotePortal.Domain.Repositories;
 using InsuranceQuotePortal.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using InsuranceQuotePortal.Webapp.Application.Services;
+using InsuranceQuotePortal.Application.Services;
 using InsuranceQuotePortal.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Microsoft.AspNetCore.Identity;
-using InsuranceQuotePortal.Webapp.Models;
-using InsuranceQuotePortal.Webapp.Data;
-using InsuranceQuotePortal.Webapp.Services;
+using InsuranceQuotePortal.Infrastructure.Models;
+using InsuranceQuotePortal.Aplication.Services;
+using InsuranceQuotePortal.Data;
+using AutoMapper;
 
 namespace InsuranceQuotePortal.Webapp
 {
@@ -32,7 +30,7 @@ namespace InsuranceQuotePortal.Webapp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            services.AddAutoMapper();
 
             services.AddEntityFrameworkSqlServer()
                     .AddDbContext<QuotingContext>(options =>
@@ -60,6 +58,7 @@ namespace InsuranceQuotePortal.Webapp
 
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IQuoteCalculationService, QuoteCalculationService>();
 
         }
 

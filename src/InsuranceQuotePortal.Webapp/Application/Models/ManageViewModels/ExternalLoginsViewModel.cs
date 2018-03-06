@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace InsuranceQuotePortal.Webapp.Models.ManageViewModels
+namespace InsuranceQuotePortal.Application.Models.ManageViewModels
 {
     public class ExternalLoginsViewModel
     {

@@ -1,9 +1,9 @@
 using InsuranceQuotePortal.Domain.Models;
-using InsuranceQuotePortal.Webapp.Application.Models;
+using InsuranceQuotePortal.Application.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace InsuranceQuotePortal.Webapp.Application.Services
+namespace InsuranceQuotePortal.Application.Services
 {
     public interface ICustomerService
     {

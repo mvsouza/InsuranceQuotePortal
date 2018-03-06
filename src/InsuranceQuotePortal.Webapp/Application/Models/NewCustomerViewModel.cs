@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InsuranceQuotePortal.Webapp.Application.Models
+namespace InsuranceQuotePortal.Application.Models
 {
     public class NewCustomerViewModel
     {

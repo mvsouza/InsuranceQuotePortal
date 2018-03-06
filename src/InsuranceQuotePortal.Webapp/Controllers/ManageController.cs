@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -9,12 +8,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using InsuranceQuotePortal.Webapp.Models;
-using InsuranceQuotePortal.Webapp.Models.ManageViewModels;
-using InsuranceQuotePortal.Webapp.Services;
-using InsuranceQuotePortal.Webapp.Models;
-using InsuranceQuotePortal.Webapp.Services;
+using InsuranceQuotePortal.Application.Models.ManageViewModels;
+using InsuranceQuotePortal.Infrastructure.Models;
+using InsuranceQuotePortal.Application.Services;
 
 namespace InsuranceQuotePortal.Webapp.Controllers
 {

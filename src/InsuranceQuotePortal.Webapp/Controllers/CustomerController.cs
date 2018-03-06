@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using InsuranceQuotePortal.Domain.Models;
-using InsuranceQuotePortal.Webapp.Application.Services;
-using InsuranceQuotePortal.Webapp.Models;
-using InsuranceQuotePortal.Webapp.Application.Models;
+using InsuranceQuotePortal.Application.Services;
+using InsuranceQuotePortal.Application.Models;
+using InsuranceQuotePortal.Application.Models;
 
 namespace InsuranceQuotePortal.Webapp.Controllers
 {

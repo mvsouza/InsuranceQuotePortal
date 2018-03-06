@@ -1,17 +1,13 @@
 using InsuranceQuotePortal.Domain.Models;
 using InsuranceQuotePortal.Infrastructure.Repositories;
-using InsuranceQuotePortal.Webapp.Application.Models;
-using InsuranceQuotePortal.Webapp.Models;
-using InsuranceQuotePortal.Webapp.Services;
-using Microsoft.AspNetCore.Http;
+using InsuranceQuotePortal.Application.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using InsuranceQuotePortal.Infrastructure.Models;
 
-namespace InsuranceQuotePortal.Webapp.Application.Services
+namespace InsuranceQuotePortal.Application.Services
 {
     public class CustomerService : ICustomerService
     {

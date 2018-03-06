@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using InsuranceQuotePortal.Webapp.Services;
 
-namespace InsuranceQuotePortal.Webapp.Services
+namespace InsuranceQuotePortal.Application.Services
 {
     public static class EmailSenderExtensions
     {

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using InsuranceQuotePortal.Webapp.Models;
+using InsuranceQuotePortal.Application.Models;
+using InsuranceQuotePortal.Infrastructure.Models;
 
-namespace InsuranceQuotePortal.Webapp.Data
+namespace InsuranceQuotePortal.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

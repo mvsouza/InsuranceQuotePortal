@@ -1,6 +1,6 @@
 using System;
 
-namespace InsuranceQuotePortal.Webapp.Models
+namespace InsuranceQuotePortal.Application.Models
 {
     public class ErrorViewModel
     {

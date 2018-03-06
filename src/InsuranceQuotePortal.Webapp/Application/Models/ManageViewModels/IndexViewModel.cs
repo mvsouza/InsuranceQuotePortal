@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InsuranceQuotePortal.Webapp.Models.ManageViewModels
+namespace InsuranceQuotePortal.Application.Models.ManageViewModels
 {
     public class IndexViewModel
     {
