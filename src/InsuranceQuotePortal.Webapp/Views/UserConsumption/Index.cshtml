@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<h2>Index</h2>
+<div>
+    <input id="carPrice" type="number" />
+    <input id="carYear" type="number" />
+    <span id="carResult"></span>
+    <button id="sendCar">Send</button>
+</div>
+@section Scripts {
+
+    <script>
+        $(function () {
+            $("#sendCar").on("click", sendCar);
+            function sendCar() {
+
+                var body = JSON.stringify({
+                    Price: parseFloat($("#carPrice").val()),
+                    Year: parseInt($("#carYear").val())
+                });
+
+                postJSON("@(Url.Action("CalculateCarQuote","Quote"))", body, function (data) {
+                    $("#carResult").html(data);
+                });
+
+                function postJSON(url, data, callback) {
+                    return jQuery.ajax({
+                        'type': 'POST',
+                        'url': url,
+                        'contentType': 'application/json',
+                        'data': data,
+                        'dataType': 'json',
+                        'success': callback
+                    });
+                };
+
+            }
+        });
+    </script>
+}
+

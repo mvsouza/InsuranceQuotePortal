@@ -9,12 +9,13 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace InsuranceQuotePortal.Webapp.Infrastructure.Migrations
+namespace InsuranceQuotePortal.Webapp.Migrations.Quoting
 {
     [DbContext(typeof(QuotingContext))]
-    partial class QuotingContextModelSnapshot : ModelSnapshot
+    [Migration("20180306165631_ActionConsumed")]
+    partial class ActionConsumed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

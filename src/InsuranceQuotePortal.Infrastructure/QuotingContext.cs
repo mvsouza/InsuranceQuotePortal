@@ -10,6 +10,7 @@ namespace InsuranceQuotePortal.Infrastructure
     {
         public const string DEFAULT_SCHEMA = "quote";
         public DbSet<Customer> Customer { get; set; }
+        public DbSet<ConsumedAction> ConsumedAction { get; set; }
 
         public QuotingContext(DbContextOptions<QuotingContext> options) : base (options) { }
 
@@ -17,7 +18,6 @@ namespace InsuranceQuotePortal.Infrastructure
         public void SaveEntities(CancellationToken cancellationToken = default(CancellationToken))
         {
             base.SaveChanges();
-            
         }       
     }
 }

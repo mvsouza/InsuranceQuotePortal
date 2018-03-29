@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceQuotePortal.Webapp.Controllers
 {
-    public class QuoteController : Controller
+    public class UserConsumptionController : Controller
     {
         public IActionResult Index()
         {

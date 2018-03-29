@@ -14,6 +14,7 @@ using InsuranceQuotePortal.Infrastructure.Models;
 using InsuranceQuotePortal.Aplication.Services;
 using InsuranceQuotePortal.Data;
 using AutoMapper;
+using InsuranceQuotePortal.Webapp.Infrastructure;
 
 namespace InsuranceQuotePortal.Webapp
 {
@@ -48,7 +49,7 @@ namespace InsuranceQuotePortal.Webapp
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration["ConnectionString"]));
-
+            
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -59,6 +60,7 @@ namespace InsuranceQuotePortal.Webapp
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<IQuoteCalculationService, QuoteCalculationService>();
+            services.AddTransient<IConsumedActionRepository, ConsumedActionRepository>();
 
         }
 
@@ -74,6 +76,7 @@ namespace InsuranceQuotePortal.Webapp
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            SeedUsers.Initialize(app);
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseMvc(routes =>
